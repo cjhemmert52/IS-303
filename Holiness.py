@@ -1,7 +1,9 @@
-numbers = [11, 25, -2, 7, 18]
+from SecondFile import is_odd
 
-for i in range(5):
-    print(numbers[i])
+numbers = [1, 2, 3, 4, 5]
 
 for num in numbers:
-    print(num)
+    if is_odd(num):
+        print(f'{num} is odd.')
+    else:
+        print(f'{num} is even.')
