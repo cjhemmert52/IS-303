@@ -12,7 +12,6 @@ def get_guess():
     return guess
 
 def evaluate_guess(secret, guess):
-    pass
     result = ''
     for i in range(len(guess)):
         if guess[i] == secret[i]:
@@ -23,5 +22,9 @@ def evaluate_guess(secret, guess):
             result += '-'
     return result
 
-def display_guess():
-    attempt_count = 0
+def display_guess(guess, result):
+    print(f'Guess: {' '.join(guess.upper())}')
+    print(f'Feedback: {' '.join(result)}')
+
+def has_won(secret, guess):
+    return guess == secret
