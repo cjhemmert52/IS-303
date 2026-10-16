@@ -7,7 +7,7 @@ def choose_word(choices):
 
 def get_guess():
     guess = str(input('Enter a five-letter word: ')).lower().strip()
-    while len(guess) != 5:
+    while len(guess) != 5 or not guess.isalnum():
         guess = str(input('Invalid guess, please try again ')).lower().strip()
     return guess
 
@@ -23,8 +23,8 @@ def evaluate_guess(secret, guess):
     return result
 
 def display_guess(guess, result):
-    print(f'Guess: {' '.join(guess.upper())}')
-    print(f'Feedback: {' '.join(result)}')
+    print(f'Guess: {" ".join(guess.upper())}')
+    print(f'Feedback: {" ".join(result)}')
 
 def has_won(secret, guess):
     return guess == secret
